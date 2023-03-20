@@ -1,0 +1,113 @@
+.home {
+
+  // .home__container
+
+  &__container {
+    padding: 50px 15px 90px 15px;
+  }
+
+  // .home__front
+
+  &__front {
+    background-image: url('https://img.rawpixel.com/private/static/images/website/2022-05/upwk61713086-wikimedia-image-job572-1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=dcbba11eb34ee0b38c5124ca3301d7a1');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 150px 170px;
+
+    @media (max-width: 992px) {
+      padding: 75px 80px;
+
+    }
+
+    @media (max-width: 768px) {
+      padding: 40px;
+    }
+  }
+
+  // .home__title
+
+  &__title {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.5rem;
+    margin: 0px 0px 30px 0px;
+
+    @media (max-width: 992px) {
+      margin: 0px 0px 20px 0px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+
+  // .home__subtitle
+
+  &__subtitle {
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.5rem;
+    font-size: 24px;
+    margin: 0px 0px 100px 0px;
+
+  }
+
+  // .home__btn
+
+  &__btn {
+    padding: 25px 70px;
+    height: 70px;
+    background-color: #79cbff;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.5rem;
+    margin: 0px 0px 30px 0px;
+    text-transform: uppercase;
+    transition: background-color 0.4s ease 0s;
+
+    @media (min-width: 992px) {
+      &:hover {
+        background-color: #2595db;
+      }
+    }
+
+    @media (max-width: 992px) {
+      padding: 20px 40px;
+      font-size: 20px;
+
+
+    }
+  }
+
+  // .home__content
+
+  &__content {
+    padding: 0 50px;
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+
+    }
+  }
+
+  // .home__desc
+
+  
+
+  // .home__mini-title
+
+
+
+  // .home__info
+
+  &__info {}
+
+  // .home__map
+
+  &__map {
+    margin: 0px 0px 50px 0px;
+  }
+}

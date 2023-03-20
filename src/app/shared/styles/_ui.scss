@@ -1,0 +1,195 @@
+// =================================================================
+._ibg {
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+
+
+// ====================================================================================================================================================
+// ====================================================================================================================================================
+// ====================================================================================================================================================
+
+.product {
+
+  // .product__content
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0px 0px 30px 0px;
+  }
+
+  // .product__item
+
+  &__item {}
+}
+
+
+.prod {
+  width: 32%;
+  // .prod__img
+  background-color: #eeeaea;
+  border-radius: 8px;
+  overflow: hidden;
+
+  @media (max-width: 992px) {
+    width: 48%;
+  }
+
+  @media (max-width: 992px) {
+    width: 90%;
+  }
+
+  &__img {
+    padding-top: 50%;
+    display: block;
+  }
+
+  // .prod__info
+
+  &__info {
+    padding: 10px;
+  }
+
+  // .prod__title
+
+  &__title {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #79cbff;
+    margin: 0px 0px 15px 0px;
+  }
+
+  // .prod__desc
+
+  &__desc {
+    text-align: center;
+    font-weight: 500;
+    margin: 0px 0px 20px 0px;
+  }
+
+  // .prod__price
+
+  &__price {
+    text-align: center;
+    margin: 0px 0px 20px 0px;
+    font-weight: 600;
+  }
+
+  // .prod__btn-group
+
+  &__btn-group {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+  }
+
+  // .prod__btn-buy
+
+  &__btn-buy {
+    width: 75%;
+
+    padding: 10px 15px;
+    background-color: #79cbff;
+    font-size: 16;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.4s ease 0s;
+    border: none;
+
+    @media (min-width: 992px) {
+      &:hover {
+        background-color: #2595db;
+      }
+    }
+  }
+
+  // .prod__count
+
+  &__count {
+    width: 25%;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+
+// ====================================================================================================================================================
+// ====================================================================================================================================================
+// ====================================================================================================================================================
+
+.home {
+  &__desc {
+    font-size: 20px;
+    line-height: 1.6rem;
+    text-align: center;
+    font-weight: 500;
+
+    p {
+      margin: 30px 0px 0px 0px;
+    }
+
+    margin: 0px 0px 40px 0px;
+
+    &_left {
+      text-align: left;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+
+  &__mini-title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.5rem;
+    text-align: center;
+    color: black;
+    margin: 0px 0px 30px 0px;
+
+    &_left {
+      text-align: left;
+    }
+  }
+}
+
+
+// ====================================================================================================================================================
+// TITLE
+// ====================================================================================================================================================
+
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(192, 181, 181);
+
+  @media (max-width: 992px) {
+    font-size: 26px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+}

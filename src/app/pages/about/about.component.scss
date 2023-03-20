@@ -1,0 +1,36 @@
+.about__link {
+  color: #79cbff;
+}
+
+.about {
+
+  // .about__container
+
+  &__container {
+    padding: 50px 15px 90px 15px;
+  }
+
+  // .about__title
+
+  &__title {
+    text-align: center;
+    margin: 0px 0px 30px 0px;
+  }
+
+  // .about__img
+
+  &__img {
+    width: 80%;
+    padding-top: 25%;
+    margin: 0 auto;
+    margin: 0px 0px 30px 0px;
+  }
+
+  // .about__body
+
+  &__body {}
+
+  // .about__link
+
+  &__link {}
+}
