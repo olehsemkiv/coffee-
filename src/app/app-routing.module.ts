@@ -10,17 +10,27 @@ import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BlogInfoComponent } from './pages/blog-info/blog-info.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { ProductResolver } from './shared/services/product.resolver';
+import { AdminBlogComponent } from './components/admin-blog/admin-blog.component';
+import { BlogResolver } from './shared/services/blog.resolver';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'product', component: ProductComponent },
-  { path: 'product-info', component: ProductInfoComponent },
+  { path: 'product/:category', component: ProductComponent },
+  { path: 'product/:category/:id', component: ProductInfoComponent,resolve:{
+    productInfo: ProductResolver
+  } },
   { path: 'blog', component: BlogComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'delivery', component: DeliveryComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'blog-info', component: BlogInfoComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'blog/:id', component: BlogInfoComponent, resolve: {
+    blogInfo: BlogResolver
+  } },
+  { path: 'admin-blog', component: AdminBlogComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
 ];
 

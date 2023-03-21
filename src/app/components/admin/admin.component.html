@@ -1,0 +1,78 @@
+<div class="container mt-5">
+  <form [formGroup]="productForm" (submit)="addItem()">
+    <div class="form-group">
+      <select formControlName="category" class="custom-select">
+        <option value="coffee">Кава</option>
+        <option value="another">До кави</option>
+        <option value="dishes">Посуд</option>
+      </select>
+    </div>
+    <div class="form-group my-2">
+      <label for="exampleInputEmail1">Name</label>
+      <input formControlName="name" type="text" class="form-control" placeholder="Name">
+    </div>
+    <div class="form-group my-2">
+      <label for="exampleInputPassword1">Type</label>
+      <input formControlName="type" type="text" class="form-control" placeholder="Type">
+    </div>
+    <div class="form-group my-2">
+      <label for="exampleInputPassword1">path</label>
+      <input formControlName="path" type="text" class="form-control" placeholder="path">
+    </div>
+    <div class="form-group my-2">
+      <label for="exampleInputPassword1">description</label>
+      <input formControlName="description" type="text" class="form-control" placeholder="description">
+    </div>
+    <div class="form-group my-2">
+      <label for="exampleInputPassword1">weight</label>
+      <input formControlName="weight" type="text" class="form-control" placeholder="weight">
+    </div>
+    <div class="form-group my-2">
+      <label for="exampleInputPassword1">price</label>
+      <input formControlName="price" type="number" class="form-control" placeholder="price">
+    </div>
+    <div class="form-group my-2">
+      <label for="exampleInputPassword1">country</label>
+      <input formControlName="country" type="text" class="form-control" placeholder="country">
+    </div>
+    <div class="form-group my-2">
+      <label for="exampleInputPassword1">imagePath</label>
+      <input formControlName="imagePath" type="text" class="form-control" placeholder="imagePath">
+    </div>
+    <button type="submit" class="btn btn-primary my-2">add</button>
+  </form>
+</div>
+
+
+<div class="container mt-3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">description</th>
+        <th scope="col">weight</th>
+        <th scope="col">price</th>
+        <th scope="col">country</th>
+        <th scope="col">category</th>
+        <th scope="col">imagePath</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of adminProducts">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.type}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.weight}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.country}}</td>
+        <td>{{product.category}}</td>
+        <td><img height="50px" [src]="product.imagePath" alt=""></td>
+        <td><button class="btn btn-danger" (click)="deleteItem(product.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

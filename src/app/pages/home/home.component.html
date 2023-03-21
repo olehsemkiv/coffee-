@@ -19,70 +19,21 @@
         Спробуй!
       </div>
       <div class="product__content">
-        <div class="product__item prod">
-          <a class="prod__img _ibg">
-            <img
-              src="https://kavoposhta.com/wp-content/uploads/2020/06/%D0%91%D1%80%D0%B0%D0%B7%D0%B8%D0%BB%D1%96%D1%8F-%D0%BA%D0%B0%D0%B2%D0%B0-300x300.jpg"
-              alt="">
+        <div class="product__item prod" *ngFor="let prod of homeProducts">
+          <a [routerLink]="[  '/product/'+prod.category, prod.id]" class="prod__img _ibg">
+            <img [src]="prod.imagePath" alt="">
           </a>
           <div class="prod__info">
-            <a class="prod__title">Бандеролька з Бразилії</a>
-            <h4 class="prod__desc">Cвіжозмелена кава з нотками молочного шоколаду та горіха</h4>
-            <p class="prod__price">240 грн</p>
+            <a [routerLink]="[  '/product/'+prod.category, prod.id]" class="prod__title">{{prod.name}}</a>
+            <h4 class="prod__desc">{{prod.description}}</h4>
+            <p class="prod__price">{{prod.price}} грн</p>
             <div class="prod__btn-group">
               <button class="prod__btn-buy">Додати в кошик</button>
-              <input type="number" name="" id="" class="prod__count" value="1">
+              <input type="number" name="" id="" class="prod__count" [value]="prod.count">
             </div>
           </div>
         </div>
-        <div class="product__item prod">
-          <div class="prod__img _ibg">
-            <img
-              src="https://kavoposhta.com/wp-content/uploads/2020/06/%D0%91%D1%80%D0%B0%D0%B7%D0%B8%D0%BB%D1%96%D1%8F-%D0%BA%D0%B0%D0%B2%D0%B0-300x300.jpg"
-              alt="">
-          </div>
-          <div class="prod__info">
-            <h3 class="prod__title">Бандеролька з Бразилії</h3>
-            <h4 class="prod__desc">Cвіжозмелена кава з нотками молочного шоколаду та горіха</h4>
-            <p class="prod__price">240 грн</p>
-            <div class="prod__btn-group">
-              <button class="prod__btn-buy">Додати в кошик</button>
-              <input type="number" name="" id="" class="prod__count" value="1">
-            </div>
-          </div>
-        </div>
-        <div class="product__item prod">
-          <div class="prod__img _ibg">
-            <img
-              src="https://kavoposhta.com/wp-content/uploads/2020/06/%D0%91%D1%80%D0%B0%D0%B7%D0%B8%D0%BB%D1%96%D1%8F-%D0%BA%D0%B0%D0%B2%D0%B0-300x300.jpg"
-              alt="">
-          </div>
-          <div class="prod__info">
-            <a class="prod__title">Бандеролька з Бразилії</a>
-            <h4 class="prod__desc">Cвіжозмелена кава з нотками молочного шоколаду та горіха</h4>
-            <p class="prod__price">240 грн</p>
-            <div class="prod__btn-group">
-              <button class="prod__btn-buy">Додати в кошик</button>
-              <input type="number" name="" id="" class="prod__count" value="1">
-            </div>
-          </div>
-        </div>
-        <div class="product__item prod">
-          <div class="prod__img _ibg">
-            <img
-              src="https://kavoposhta.com/wp-content/uploads/2020/06/%D0%91%D1%80%D0%B0%D0%B7%D0%B8%D0%BB%D1%96%D1%8F-%D0%BA%D0%B0%D0%B2%D0%B0-300x300.jpg"
-              alt="">
-          </div>
-          <div class="prod__info">
-            <h3 class="prod__title">Бандеролька з Бразилії</h3>
-            <h4 class="prod__desc">Cвіжозмелена кава з нотками молочного шоколаду та горіха</h4>
-            <p class="prod__price">240 грн</p>
-            <div class="prod__btn-group">
-              <button class="prod__btn-buy">Додати в кошик</button>
-              <input type="number" name="" id="" class="prod__count" value="1">
-            </div>
-          </div>
-        </div>
+
 
       </div>
       <div class="home__info">
@@ -146,8 +97,6 @@
       </div>
       <div class="home__desc home__desc_left">
         <p>Перепробувавши безліч сортів з різних країн, ми вибрали для тебе дещо особливе:
-
-
         </p>
         <p>Бразильська мелена кава з нотками шоколаду, чорниці та лісового горіха
           Це натуральна, мелена, обсмажена і запакована у Львові кава. Якщо ти хочеш побалувати себе або близьких

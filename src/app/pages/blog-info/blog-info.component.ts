@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { blogElementResponse } from 'src/app/shared/interfaces/blog.interface';
 
 @Component({
   selector: 'app-blog-info',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogInfoComponent implements OnInit {
 
-  constructor() { }
+  public currentBlog!: blogElementResponse;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+
+  ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe(response => {
+      this.currentBlog = response['blogInfo'];
+    })
   }
 
 }

@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <form [formGroup]="blogForm" (submit)="addItem()">
+    <div class="form-group my-2">
+      <label for="exampleInputEmail1">Name</label>
+      <input formControlName="name" type="text" class="form-control" placeholder="Name">
+    </div>
+    <div class="form-floating">
+      <textarea formControlName="description" class="form-control" placeholder="Leave a comment here"
+        id="floatingTextarea"></textarea>
+      <label for="floatingTextarea">Comments</label>
+    </div>
+    <div class="form-group my-2">
+      <label for="exampleInputPassword1">imagePath</label>
+      <input formControlName="imagePath" type="text" class="form-control" placeholder="imagePath">
+    </div>
+    <button type="submit" class="btn btn-primary my-2">add</button>
+  </form>
+</div>
+
+
+<div class="container mt-3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">description</th>
+        <th scope="col">imagePath</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let blog of adminBlogs">
+        <td>{{blog.id}}</td>
+        <td>{{blog.name}}</td>
+        <td>{{blog.description}}</td>
+        <td><img height="50px" [src]="blog.imagePath" alt=""></td>
+        <td><button class="btn btn-danger" (click)="deleteItem(blog.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -14,6 +14,14 @@ import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BlogInfoComponent } from './pages/blog-info/blog-info.component';
+import { AdminComponent } from './components/admin/admin.component';
+
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminBlogComponent } from './components/admin-blog/admin-blog.component';
+
+
 
 @NgModule({
   declarations: [
@@ -28,11 +36,16 @@ import { BlogInfoComponent } from './pages/blog-info/blog-info.component';
     DeliveryComponent,
     CheckoutComponent,
     AboutComponent,
-    BlogInfoComponent
+    BlogInfoComponent,
+    AdminComponent,
+    AdminBlogComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
