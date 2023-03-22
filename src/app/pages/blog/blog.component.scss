@@ -15,15 +15,27 @@
 
   // .blog__body
 
-  &__body {}
+  &__body {
+    width: 75%;
+    margin: 0 auto;
+
+
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  }
 
   // .blog__item
 
   &__item {
     width: 100%;
 
+    
+
     &:not(:last-child) {
       margin: 0px 0px 50px 0px;
+      padding-bottom: 15px;
+    border-bottom: 1px solid grey;
     }
   }
 
@@ -70,6 +82,10 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 1.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 
   // .blog__item-link

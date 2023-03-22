@@ -1,6 +1,6 @@
 <section class="product">
   <div class="product__container __container">
-    <h1 class="product__title title">Подарункові набори</h1>
+    <h1 class="product__title title">{{categoryProductName}}</h1>
     <div class="product__content">
       <div class="product__item prod" *ngFor="let product of userProducts">
         <a [routerLink]="[  '/product/'+product.category, product.id]" class="prod__img _ibg">
@@ -8,11 +8,13 @@
         </a>
         <div class="prod__info">
           <a [routerLink]="[  '/product/'+product.category, product.id]" class="prod__title">{{product.name}}</a>
-          <h4 class="prod__desc">{{product.description}}</h4>
-          <p class="prod__price">{{product.price}} грн</p>
+          <h4 class="prod__desc">{{product.description | slice:0:50}} <span
+              *ngIf="product.description.length >30">...</span></h4>
+          <p class="prod__price">{{product.price * product.count}} грн</p>
           <div class="prod__btn-group">
-            <button class="prod__btn-buy">Додати в кошик</button>
-            <input type="number" name="" id="" class="prod__count" [value]="product.count">
+            <button class="prod__btn-buy" (click)="addToBasket(product)">Додати в кошик</button>
+            <input (change)="changeCount(product)" [(ngModel)]="product.count" type="number" name="" id="" class="prod__count" [value]="product.count"
+              min="1">
           </div>
         </div>
       </div>

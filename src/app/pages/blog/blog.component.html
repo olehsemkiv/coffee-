@@ -7,9 +7,9 @@
           <img [src]="blog.imagePath" alt="">
         </a>
         <h2 class="blog__item-title">{{blog.name}}</h2>
-        <div class="blog__item-date">13.01.2021</div>
-        <div class="blog__item-desc">{{blog.description | slice:0:80}} <span
-            *ngIf="blog.description.length > 30">...</span>
+        <!-- <div class="blog__item-date">13.01.2021</div> -->
+        <div class="blog__item-desc">{{blog.description | slice:0:250}} <span
+            *ngIf="blog.description.length > 250">...</span>
           <a class="blog__item-link" [routerLink]="[  '/blog/', blog.id]">Читати далі »</a>
         </div>
       </div>

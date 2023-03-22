@@ -61,22 +61,22 @@ form {
 /* ---------------------------- */
 
 
-// ::-webkit-scrollbar {
-//   height: 10px;
-//   width: 5px;
-//   background: #fff;
+::-webkit-scrollbar {
+  height: 10px;
+  width: 5px;
+  background: #fff;
 
-// }
+}
 
-// ::-webkit-scrollbar-thumb {
-//   background: #ccf6d9;
-//   -webkit-border-radius: 1ex;
-//   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
-// }
+::-webkit-scrollbar-thumb {
+  background: rgb(0 0 0 / 75%);
+  -webkit-border-radius: 1ex;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
 
-// ::-webkit-scrollbar-corner {
-//   background: #fff;
-// }
+::-webkit-scrollbar-corner {
+  background: #fff;
+}
 
 
 /* ---------------------------- */

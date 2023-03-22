@@ -14,6 +14,8 @@ export class AdminBlogComponent implements OnInit {
   public adminBlogs: Array<blogElementResponse> = [];
   public editStatus = false;
 
+
+
   constructor(
     private fb: FormBuilder,
     private blogService: BlogService,
@@ -28,7 +30,7 @@ export class AdminBlogComponent implements OnInit {
     this.blogForm = this.fb.group({
       name: [null, Validators.required],
       description: [null, Validators.required],
-      imagePath: [null, Validators.required],
+      imagePath: [null, Validators.required]
     })
   }
 
@@ -42,9 +44,11 @@ export class AdminBlogComponent implements OnInit {
     this.blogService.create(this.blogForm.value).subscribe(() => {
       this.getData();
       this.blogForm.reset();
+
+
     })
-   
-    
+
+
   }
 
   deleteItem(id: number): void {

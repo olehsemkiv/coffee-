@@ -3,7 +3,7 @@
     <div class="home__front">
       <h1 class="home__title">Свіжозмелена кава з нотками шоколаду</h1>
       <div class="home__subtitle">Пахне навіть крізь пачку 😋</div>
-      <a [routerLink]="[ '/path' ]" class="home__btn">візьми додому</a>
+      <a [routerLink]="[ '/product/coffee' ]" class="home__btn">візьми додому</a>
     </div>
     <div class="home__content">
       <div class="home__desc">
@@ -25,11 +25,12 @@
           </a>
           <div class="prod__info">
             <a [routerLink]="[  '/product/'+prod.category, prod.id]" class="prod__title">{{prod.name}}</a>
-            <h4 class="prod__desc">{{prod.description}}</h4>
-            <p class="prod__price">{{prod.price}} грн</p>
+            <h4 class="prod__desc">{{prod.description | slice:0:50}} <span
+              *ngIf="prod.description.length >30">...</span></h4>
+            <p class="prod__price">{{prod.price * prod.count}} грн</p>
             <div class="prod__btn-group">
-              <button class="prod__btn-buy">Додати в кошик</button>
-              <input type="number" name="" id="" class="prod__count" [value]="prod.count">
+              <button (click)="addToBasket(prod)" class="prod__btn-buy">Додати в кошик</button>
+              <input (change)="changeCount(prod)" [(ngModel)]="prod.count" min="1" type="number" name="" id="" class="prod__count" [value]="prod.count">
             </div>
           </div>
         </div>

@@ -7,10 +7,13 @@
       <div class="product-info__info">
         <h1 class="product-info__title">{{currentProduct.name}}</h1>
         <p class="product-info__desc">{{currentProduct.description}}</p>
-        <div class="product-info__price">{{currentProduct.price}} грн</div>
+        <p class="product-info__desc">Тип товару: {{currentProduct.type}}</p>
+        <p class="product-info__desc"> Країна виробник: {{currentProduct.country}}</p>
+        <div class="product-info__price">{{currentProduct.price * currentProduct.count}} грн</div>
         <div class="prod__btn-group">
-          <button class="prod__btn-buy">Додати в кошик</button>
-          <input type="number" name="" id="" class="prod__count" [value]="currentProduct.count">
+          <button (click)="addToBasket(currentProduct)" class="prod__btn-buy">Додати в кошик</button>
+          <input (change)="changeCount(currentProduct)" [(ngModel)]="currentProduct.count" min="1" type="number" name=""
+            id="" class="prod__count" [value]="currentProduct.count">
         </div>
       </div>
     </div>

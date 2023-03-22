@@ -17,6 +17,8 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
+    window.scrollTo(0, 0);
+
   }
 
   getData(): void {

@@ -66,9 +66,14 @@
 
   &__link {
     font-weight: 600;
-    font-size: 1.25em;
     font-size: 18px;
     color: #fff;
+    line-height: 150%;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    
+    }
   }
 
   // .footer__map

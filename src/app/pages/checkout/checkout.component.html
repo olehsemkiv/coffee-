@@ -1,102 +1,79 @@
 <section class="checkout">
   <div class="checkout__container __container">
     <h1 class="checkout__title title">Корзина</h1>
+    <div *ngIf="basket.length == 0" class="checkout__title title">Корзина пуста <a [routerLink]="[ '' ]">Здійснити
+        покупки</a></div>
     <div class="checkout__body">
-      <table class="table table-striped">
+      <table *ngIf="basket.length >0" class="table table-striped">
         <thead>
           <tr>
             <th scope="col">Товар</th>
             <th scope="col">Фото</th>
-            <th scope="col">Кількість</th>
+            <!-- <th scope="col">Кількість</th> -->
             <th scope="col">Ціна</th>
             <th scope="col">Проміжний підсумок</th>
             <th scope="col">Видалити</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Бандеролька з Бразилії</td>
-            <td><img
-                src="https://kavoposhta.com/wp-content/uploads/2020/06/%D0%91%D1%80%D0%B0%D0%B7%D0%B8%D0%BB%D1%96%D1%8F-%D0%BA%D0%B0%D0%B2%D0%B0-300x300.jpg"
-                alt="" height="70px"></td>
+          <tr *ngFor="let item of basket">
+            <td>{{item.name}}</td>
+            <td><img [src]="item.imagePath" alt="" height="70px"></td>
+            <!-- <td>
+              <input [(ngModel)]="item.count" type="number" [value]="item.count">
+            </td> -->
             <td>
-              <input type="number" value="1">
+              {{item.price}} грн
             </td>
             <td>
-              240 грн
+              {{item.price * item.count}} грн
             </td>
-            <td>
-              240 грн
-            </td>
-            <td>
+            <td (click)="deleteCartItem(item)">
               Х
             </td>
           </tr>
-          <tr>
-            <td>Бандеролька з Бразилії</td>
-            <td><img
-                src="https://kavoposhta.com/wp-content/uploads/2020/06/%D0%91%D1%80%D0%B0%D0%B7%D0%B8%D0%BB%D1%96%D1%8F-%D0%BA%D0%B0%D0%B2%D0%B0-300x300.jpg"
-                alt="" height="70px"></td>
-            <td>
-              <input type="number" value="1">
-            </td>
-            <td>
-              240 грн
-            </td>
-            <td>
-              240 грн
-            </td>
-            <td>
-              Х
-            </td>
-          </tr>
-          <tr>
-            <td>Бандеролька з Бразилії</td>
-            <td><img
-                src="https://kavoposhta.com/wp-content/uploads/2020/06/%D0%91%D1%80%D0%B0%D0%B7%D0%B8%D0%BB%D1%96%D1%8F-%D0%BA%D0%B0%D0%B2%D0%B0-300x300.jpg"
-                alt="" height="70px"></td>
-            <td>
-              <input type="number" value="1">
-            </td>
-            <td>
-              240 грн
-            </td>
-            <td>
-              240 грн
-            </td>
-            <td>
-              Х
-            </td>
-          </tr>
-
         </tbody>
       </table>
-      <div class="checkout__total-price">
-        Загальна ціна: 240 грн
+      <div *ngIf="basket.length >0" class="checkout__total-price">
+        Загальна ціна: {{totalPrice}} грн
       </div>
-      <h3 class="checkout__subtitle">
+      <h3 *ngIf="basket.length >0" class="checkout__subtitle">
         Доставка
       </h3>
-      <div class="checout__form">
-        <form>
+      <div *ngIf="basket.length >0" class="checout__form">
+        <form [formGroup]="orderForm" (submit)="addOrder()">
           <div class="form-group">
-
-            <input type="text" class="form-control" placeholder="Твоє ім'я">
+            <input formControlName="firstName" name="firstName" type="text" class="form-control"
+              placeholder="Твоє ім'я">
+          </div>
+          <div class=" my-3" [style.display]="orderForm.controls['firstName'].errors?.['required'] ? 'block' : 'none'">
+            Поле Ім'я обов'язкове!
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Прізвище">
+            <input formControlName="lastName" name="lastName" type="text" class="form-control" placeholder="Прізвище">
+          </div>
+          <div class=" my-3" [style.display]="orderForm.controls['lastName'].errors?.['required'] ? 'block' : 'none'">
+            Поле Прізвище обов'язкове!
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Телефон">
+            <input formControlName="phone" name="phone" type="text" class="form-control" placeholder="Телефон">
+          </div>
+          <div class=" my-3" [style.display]="orderForm.controls['phone'].errors?.['required'] ? 'block' : 'none'">
+            Поле Телефон обов'язкове!
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Електронна пошта (сюди прийде накладна)">
+            <input formControlName="email" name="email" type="text" class="form-control"
+              placeholder="Електронна пошта (сюди прийде накладна)">
+          </div>
+          <div class=" my-3" [style.display]="orderForm.controls['email'].errors?.['pattern'] ? 'block' : 'none'">
+            Поле Email введене не коректно
           </div>
           <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">Додаткова інформація</label>
+            <textarea formControlName="info" name="info" class="form-control" placeholder="Leave a comment here"
+              id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Додаткова інформація (не обов'язково)</label>
           </div>
-          <button type="button" class="btn btn-success">Підтвердити замовлення</button>
+          <button [disabled]="orderForm.invalid" type="submit" class="btn btn-success">Підтвердити замовлення</button>
         </form>
       </div>
     </div>

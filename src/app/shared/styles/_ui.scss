@@ -45,8 +45,9 @@
     width: 48%;
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: 768px) {
     width: 90%;
+    margin: 0 auto;
   }
 
   &__img {
@@ -69,6 +70,7 @@
     font-weight: 500;
     color: #79cbff;
     margin: 0px 0px 15px 0px;
+    height: 60px;
   }
 
   // .prod__desc
@@ -77,6 +79,8 @@
     text-align: center;
     font-weight: 500;
     margin: 0px 0px 20px 0px;
+    height: 60px;
+
   }
 
   // .prod__price
@@ -104,7 +108,7 @@
 
     padding: 10px 15px;
     background-color: #79cbff;
-    font-size: 16;
+    font-size: 16px;
     color: #fff;
     font-weight: 600;
     text-transform: uppercase;
@@ -115,6 +119,11 @@
       &:hover {
         background-color: #2595db;
       }
+    }
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+
     }
   }
 
@@ -145,6 +154,10 @@
 
     p {
       margin: 30px 0px 0px 0px;
+
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
     }
 
     margin: 0px 0px 40px 0px;
@@ -168,6 +181,11 @@
 
     &_left {
       text-align: left;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+
     }
   }
 }

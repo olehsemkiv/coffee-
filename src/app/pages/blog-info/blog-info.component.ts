@@ -20,6 +20,8 @@ export class BlogInfoComponent implements OnInit {
     this.activatedRoute.data.subscribe(response => {
       this.currentBlog = response['blogInfo'];
     })
+    window.scrollTo(0, 0);
+
   }
 
 }

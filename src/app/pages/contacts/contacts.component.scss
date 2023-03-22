@@ -46,9 +46,11 @@
 
   &__map {
     padding: 50px 100px;
+    height: 450px;
 
     @media (max-width: 768px) {
       padding: 30px 20px;
+      height: 300px;
     }
   }
 }

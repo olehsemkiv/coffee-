@@ -5,41 +5,39 @@
         <a class="navbar-brand" [routerLink]="[ '' ]" routerLinkActive="active">
           <img height="70px" src="https://kavoposhta.com/wp-content/uploads/2021/01/kavoposhta-logo-55.jpg" alt="">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button (click)="changeBurgerStatus()" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div [ngClass]="{'show': BurgerStatus}" class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-            <li class="nav-item">
+            <li (click)="changeBurgerStatus()" class="nav-item">
               <a class="nav-link" [routerLink]="[ '/product/coffee' ]" routerLinkActive="active">Кава</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link">Подарункові набори</a>
-            </li>
-            <li class="nav-item">
+            <li (click)="changeBurgerStatus()" class="nav-item">
               <a class="nav-link" [routerLink]="[ '/product/another' ]">До кави</a>
             </li>
-            <li class="nav-item">
+            <li (click)="changeBurgerStatus()" class="nav-item">
               <a class="nav-link" [routerLink]="[ '/product/dishes' ]">Посуд</a>
             </li>
-            <li class="nav-item">
+            <li (click)="changeBurgerStatus()" class="nav-item">
               <a class="nav-link" [routerLink]="[ '/blog' ]" routerLinkActive="active">Блог</a>
             </li>
-            <li class="nav-item">
+            <li (click)="changeBurgerStatus()" class="nav-item">
               <a class="nav-link" [routerLink]="[ '/about' ]" routerLinkActive="active">Про нас</a>
             </li>
-            <li class="nav-item">
+            <li (click)="changeBurgerStatus()" class="nav-item">
               <a class="nav-link" [routerLink]="[ '/delivery' ]" routerLinkActive="active">Доставка</a>
             </li>
-            <li class="nav-item">
+            <li (click)="changeBurgerStatus()" class="nav-item">
               <a class="nav-link" [routerLink]="[ '/contacts' ]" routerLinkActive="active">Контакти</a>
             </li>
-            <li class="nav-item cart">
+            <li (click)="changeBurgerStatus()" class="nav-item cart">
               <a class="nav-link" [routerLink]="[ '/checkout' ]" routerLinkActive="active">
                 <img width="30px" src="https://cdn-icons-png.flaticon.com/512/3916/3916598.png" alt="">
-                <span class="total-count">0</span>
+                <span class="total-count">{{totalCount}}</span>
               </a>
             </li>
           </ul>

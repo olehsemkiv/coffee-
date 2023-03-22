@@ -32,7 +32,7 @@ export class AdminComponent implements OnInit {
       path: [null, Validators.required],
       description: [null, Validators.required],
       weight: [null,],
-      price: [null,],
+      price: [null, Validators.required],
       country: [null,],
       imagePath: [null, Validators.required],
       count: [1],
@@ -53,9 +53,11 @@ export class AdminComponent implements OnInit {
   }
 
   deleteItem(id: number): void {
-    this.productService.delete(id).subscribe(() => {
-      this.getData();
-    })
+    if (confirm('Realy delete ?')) {
+      this.productService.delete(id).subscribe(() => {
+        this.getData();
+      })
+    }
   }
 
 }
