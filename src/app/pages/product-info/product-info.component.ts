@@ -12,6 +12,7 @@ import { ProductService } from 'src/app/shared/services/product/product.service'
 export class ProductInfoComponent implements OnInit {
 
   public currentProduct!: IProductResponse;
+  public categoryName!: string;
 
   constructor(
 
@@ -23,6 +24,15 @@ export class ProductInfoComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(response => {
       this.currentProduct = response['productInfo'];
+
+      if (this.currentProduct.category == 'coffee') {
+        this.categoryName = 'Кава';
+      } else if (this.currentProduct.category == 'another') {
+        this.categoryName = 'До кави';
+      } else if (this.currentProduct.category == 'dishes') {
+        this.categoryName = 'Посуд';
+
+      }
     })
     window.scrollTo(0, 0);
 

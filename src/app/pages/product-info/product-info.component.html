@@ -1,5 +1,16 @@
 <section class="product-info">
   <div class="product-info__container __container">
+    <ul class="product-menu">
+      <li class="product-menu__item">
+        <a [routerLink]="[ '' ]" class="product-menu__link">Головна ></a>
+      </li>
+      <li class="product-menu__item">
+        <a [routerLink]="[ '/product/'+currentProduct.category ]" class="product-menu__link">{{categoryName}} ></a>
+      </li>
+      <li class="product-menu__item">
+        <a class="product-menu__link">{{currentProduct.name}}</a>
+      </li>
+    </ul>
     <div class="product-info__body">
       <div class="product-info_img _ibg">
         <img [src]="currentProduct.imagePath" alt="">
