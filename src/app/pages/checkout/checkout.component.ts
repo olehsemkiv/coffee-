@@ -138,7 +138,7 @@ export class CheckoutComponent implements OnInit {
         this.basket = [];
         localStorage.setItem('basket', JSON.stringify(this.basket));
 
-        this.router.navigate(['']);
+        this.router.navigate(['/successfully']);
         this.orderService.changeBasket.next(true);
       },
       (error) => {

@@ -27,13 +27,13 @@ export class AdminComponent implements OnInit {
   initProductForm(): void {
     this.productForm = this.fb.group({
       category: [null, Validators.required],
-      type: [null,],
+      type: [null],
       name: [null, Validators.required],
       path: [null, Validators.required],
       description: [null, Validators.required],
-      weight: [null,],
+      weight: [null],
       price: [null, Validators.required],
-      country: [null,],
+      country: [null],
       imagePath: [null, Validators.required],
       count: [1],
     })
@@ -53,7 +53,7 @@ export class AdminComponent implements OnInit {
   }
 
   deleteItem(id: number): void {
-    if (confirm('Realy delete ?')) {
+    if (confirm('Остаточно видалити допис ?')) {
       this.productService.delete(id).subscribe(() => {
         this.getData();
       })

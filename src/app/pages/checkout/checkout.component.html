@@ -1,10 +1,19 @@
 <section class="checkout">
   <div class="checkout__container __container">
     <h1 class="checkout__title title">Корзина</h1>
-    <div *ngIf="basket.length == 0" class="checkout__title title">Корзина пуста <a [routerLink]="[ '' ]">Здійснити
-        покупки</a></div>
-    <div class="checkout__body">
-      <table *ngIf="basket.length >0" class="table table-striped">
+
+    <div *ngIf="basket.length == 0" class="checkout__body-empty">
+      <div class="checkout__body-empty-img _ibg">
+        <img
+          src="https://www.foodandwine.com/thmb/o7F9en0HhC601ws3gCvBz4klgSE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-store-coffee-beans-FT-BLOG0121-99af87cb1f104993b234e1522746e82c.jpg"
+          alt="">
+      </div>
+      <h2>Корзина пуста :(</h2>
+      <a [routerLink]="[ '/home' ]" class="checkout__body-empty-btn">здійснити покупки</a>
+    </div>
+
+    <div *ngIf="basket.length > 0" class="checkout__body">
+      <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">Товар</th>
@@ -34,13 +43,13 @@
           </tr>
         </tbody>
       </table>
-      <div *ngIf="basket.length >0" class="checkout__total-price">
+      <div class="checkout__total-price">
         Загальна ціна: {{totalPrice}} грн
       </div>
-      <h3 *ngIf="basket.length >0" class="checkout__subtitle">
+      <h3 class="checkout__subtitle">
         Доставка
       </h3>
-      <div *ngIf="basket.length >0" class="checout__form">
+      <div class="checout__form">
         <form [formGroup]="orderForm" (submit)="addOrder()">
           <div class="form-group">
             <input formControlName="firstName" name="firstName" type="text" class="form-control"

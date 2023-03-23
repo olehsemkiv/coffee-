@@ -52,9 +52,11 @@ export class AdminBlogComponent implements OnInit {
   }
 
   deleteItem(id: number): void {
-    this.blogService.delete(id).subscribe(() => {
-      this.getData();
-    })
+    if (confirm('Остаточно видалити допис ?')) {
+      this.blogService.delete(id).subscribe(() => {
+        this.getData();
+      })
+    }
   }
 
 }

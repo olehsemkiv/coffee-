@@ -1,6 +1,14 @@
 <section class="blog">
   <div class="blog__container __container">
     <h1 class="blog__title title">Блог</h1>
+    <div *ngIf="userBlogs.length == 0" class="blog__body-empty">
+      <div class="blog__body-empty-img _ibg">
+        <p>Блог не знайдено :(</p>
+        <img
+          src="https://www.tastingtable.com/img/gallery/20-different-types-of-coffee-explained/l-intro-1659544996.jpg"
+          alt="">
+      </div>
+    </div>
     <div class="blog__body">
       <div class="blog__item" *ngFor="let blog of userBlogs">
         <a [routerLink]="[  '/blog/', blog.id]" class="blog__item-img _ibg">

@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminBlogComponent } from './components/admin-blog/admin-blog.component';
+import { SuccessfullyComponent } from './pages/successfully/successfully.component';
 
 
 
@@ -38,7 +39,8 @@ import { AdminBlogComponent } from './components/admin-blog/admin-blog.component
     AboutComponent,
     BlogInfoComponent,
     AdminComponent,
-    AdminBlogComponent
+    AdminBlogComponent,
+    SuccessfullyComponent
   ],
   imports: [
     BrowserModule,

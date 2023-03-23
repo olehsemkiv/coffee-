@@ -7,8 +7,9 @@
       <div class="product-info__info">
         <h1 class="product-info__title">{{currentProduct.name}}</h1>
         <p class="product-info__desc">{{currentProduct.description}}</p>
-        <p class="product-info__desc">Тип товару: {{currentProduct.type}}</p>
-        <p class="product-info__desc"> Країна виробник: {{currentProduct.country}}</p>
+        <p *ngIf="currentProduct.type" class="product-info__desc">Тип товару: {{currentProduct.type}}</p>
+        <p *ngIf="currentProduct.country" class="product-info__desc"> Країна виробник: {{currentProduct.country}}</p>
+        <p *ngIf="currentProduct.weight" class="product-info__desc"> Вага / Обєм / шт: {{currentProduct.weight}}</p>
         <div class="product-info__price">{{currentProduct.price * currentProduct.count}} грн</div>
         <div class="prod__btn-group">
           <button (click)="addToBasket(currentProduct)" class="prod__btn-buy">Додати в кошик</button>

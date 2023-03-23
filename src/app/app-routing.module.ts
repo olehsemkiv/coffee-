@@ -14,6 +14,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { ProductResolver } from './shared/services/product.resolver';
 import { AdminBlogComponent } from './components/admin-blog/admin-blog.component';
 import { BlogResolver } from './shared/services/blog.resolver';
+import { SuccessfullyComponent } from './pages/successfully/successfully.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'about', component: AboutComponent },
   { path: 'admin', component: AdminComponent },
+  { path: 'successfully', component: SuccessfullyComponent },
   { path: 'blog/:id', component: BlogInfoComponent, resolve: {
     blogInfo: BlogResolver
   } },

@@ -97,3 +97,61 @@ td {
     }
   }
 }
+
+
+.checkout {
+
+  // .checkout__body-empty
+
+  &__body-empty {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .checkout__body-empty-img
+
+  &__body-empty-img {
+    padding-top: 30%;
+    margin-bottom: 30px;
+
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+
+  // .checkout__body-empty-btn
+
+  &__body-empty-btn {
+
+    display: inline-block;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #79cbff;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.4s ease 0s;
+    text-align: center;
+
+    @media (min-width: 992px) {
+      &:hover {
+        background-color: #34a1e6;
+      }
+    }
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      padding: 15px 30px;
+    }
+  }
+}
